@@ -21,12 +21,13 @@ def index():
 
 #Connexion à la base de données PostgreSQL
 def connexionDB():
-    serveur = "localhost"
-    bd = "GestionApprenant"
-    userBD = "majmoud"
-    mdp = "diop"
+    serveur = "ec2-174-129-227-128.compute-1.amazonaws.com"
+    bd = "def6p9u6t0o45m"
+    userBD = "zdfyfzhzxntvpi"
+    mdp = "e691227410d4268e9699a16c8d2b80b902994a58c189d01f7226f6ef75b478e7"
+    port = 5432
     try:
-        connexion = psy.connect(host=serveur, database=bd, user=userBD, password=mdp)
+        connexion = psy.connect(host=serveur, database=bd, user=userBD, password=mdp, port=port)
         return connexion
     except psy.OperationalError:
         print('Erreur lors de la connexion à la base de données!!!')
